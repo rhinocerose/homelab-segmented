@@ -11,7 +11,6 @@
 
 
 ## Issues
-    - not showing on portainer
 
 ## Verified
 

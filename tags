@@ -7,12 +7,96 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/86bdb84c/
+1.0.0 - 2015-03-14	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 1.0.0 - 2015-03-14$/;"	s	chapter:Change log
+2.0.0 - 2015-11-05	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.0.0 - 2015-11-05$/;"	s	chapter:Change log
+2.0.1 - 2015-11-05	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.0.1 - 2015-11-05$/;"	s	chapter:Change log
+2.0.2 - 2015-12-01	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.0.2 - 2015-12-01$/;"	s	chapter:Change log
+2.1.0 - 2016-05-12	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.1.0 - 2016-05-12$/;"	s	chapter:Change log
+2.1.1 - 2016-05-29	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.1.1 - 2016-05-29$/;"	s	chapter:Change log
+2.2.0 - 2016-07-29	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.2.0 - 2016-07-29$/;"	s	chapter:Change log
+2.2.1 - 2016-10-29	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.2.1 - 2016-10-29$/;"	s	chapter:Change log
+2.2.2 - 2017-01-20	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.2.2 - 2017-01-20$/;"	s	chapter:Change log
+2.3.0 - 2017-05-10	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.3.0 - 2017-05-10$/;"	s	chapter:Change log
+2.3.1 - 2017-05-29	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.3.1 - 2017-05-29$/;"	s	chapter:Change log
+2.4.0 - 2017-09-15	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.4.0 - 2017-09-15$/;"	s	chapter:Change log
+2.5.0 - 2017-11-21	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.5.0 - 2017-11-21$/;"	s	chapter:Change log
+2.5.1 - 2018-05-20	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.5.1 - 2018-05-20$/;"	s	chapter:Change log
+2.6.0 - 2018-08-16	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.6.0 - 2018-08-16$/;"	s	chapter:Change log
+2.7.0 - 2018-10-04	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.7.0 - 2018-10-04$/;"	s	chapter:Change log
+2.7.1  - 2019-06-22	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## 2.7.1  - 2019-06-22$/;"	s	chapter:Change log
+<C-h>	roles/base-packages/files/vimrc	/^nnoremap <C-h> <C-w>h$/;"	m
+<C-j>	roles/base-packages/files/vimrc	/^nnoremap <C-j> <C-w>j$/;"	m
+<C-k>	roles/base-packages/files/vimrc	/^nnoremap <C-k> <C-w>k$/;"	m
+<C-l>	roles/base-packages/files/vimrc	/^inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u$/;"	m
+<C-l>	roles/base-packages/files/vimrc	/^nnoremap <C-l> <C-w>l$/;"	m
+<leader><tab>	roles/base-packages/files/vimrc	/^map <leader><tab> gg=G<C-o><C-o>$/;"	m
+<leader>ev	roles/base-packages/files/vimrc	/^nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>$/;"	m
+<leader>sv	roles/base-packages/files/vimrc	/^nnoremap <leader>sv  :source ~\/.vim\/vimrc<CR>$/;"	m
+<leader>t	roles/base-packages/files/vimrc	/^nnoremap <leader>t :tabnew$/;"	m
+<leader>v	roles/base-packages/files/vimrc	/^nnoremap <leader>v <C-w><C-v>$/;"	m
+<leader>w	roles/base-packages/files/vimrc	/^nnoremap <leader>w <C-w>v<C-w>l$/;"	m
+<tab>	roles/base-packages/files/vimrc	/^nnoremap <tab> %$/;"	m
+<tab>	roles/base-packages/files/vimrc	/^vnoremap <tab> %$/;"	m
+Add Docker GPG key.	galaxy_roles/geerlingguy.docker/tasks/setup-RedHat.yml	/^- name: Add Docker GPG key.$/;"	p
+Add Docker apt key (alternative for older systems without SNI).	galaxy_roles/geerlingguy.docker/tasks/setup-Debian.yml	/^- name: Add Docker apt key (alternative for older systems without SNI).$/;"	p
+Add Docker apt key.	galaxy_roles/geerlingguy.docker/tasks/setup-Debian.yml	/^- name: Add Docker apt key.$/;"	p
+Add Docker repository.	galaxy_roles/geerlingguy.docker/tasks/setup-Debian.yml	/^- name: Add Docker repository.$/;"	p
+Add Docker repository.	galaxy_roles/geerlingguy.docker/tasks/setup-RedHat.yml	/^- name: Add Docker repository.$/;"	p
 Add SSH public key for user	roles/userconfig/tasks/main.yml	/^- name: Add SSH public key for user$/;"	p
 Add local user	roles/userconfig/tasks/main.yml	/^- name: Add local user$/;"	p
 Add sudoer rule for local user	roles/userconfig/tasks/main.yml	/^- name: Add sudoer rule for local user$/;"	p
 Add sudoers group	roles/userconfig/tasks/main.yml	/^- name: Add sudoers group$/;"	p
+Add tests	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Add tests$/;"	S	section:Contributor Guideline""Expectations
+Added	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## Added$/;"	s	chapter:Change log
+Added	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Added$/;"	S	section:Change log""1.0.0 - 2015-03-14
+Added	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Added$/;"	S	section:Change log""2.1.0 - 2016-05-12
+Added	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Added$/;"	S	section:Change log""2.2.0 - 2016-07-29
+Added	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Added$/;"	S	section:Change log""2.2.1 - 2016-10-29
+Added	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Added$/;"	S	section:Change log""2.3.0 - 2017-05-10
+Added	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Added$/;"	S	section:Change log""2.5.1 - 2018-05-20
+Added	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Added$/;"	S	section:Change log""2.6.0 - 2018-08-16
+Adding arbitrary configuration files	galaxy_roles/bertvv.samba/README.md	/^## Adding arbitrary configuration files$/;"	s	chapter:Ansible role `bertvv.samba`
+Ansible Role: Docker	galaxy_roles/geerlingguy.docker/README.md	/^# Ansible Role: Docker$/;"	c
+Ansible Role: NTP	galaxy_roles/geerlingguy.ntp/README.md	/^# Ansible Role: NTP$/;"	c
+Ansible role `bertvv.samba`	galaxy_roles/bertvv.samba/README.md	/^# Ansible role `bertvv.samba`$/;"	c
 Architecture	roles/userconfig/files/etc/pacman.conf	/^Architecture = auto$/;"	k	section:options
+Author Information	galaxy_roles/geerlingguy.docker/README.md	/^## Author Information$/;"	s	chapter:Ansible Role: Docker
+Author Information	galaxy_roles/geerlingguy.ntp/README.md	/^## Author Information$/;"	s	chapter:Ansible Role: NTP
+BSD License	galaxy_roles/bertvv.samba/LICENSE.md	/^# BSD License$/;"	c
+Be explicit	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Be explicit$/;"	S	section:Contributor Guideline""Expectations
 CMS	documentation/segmentation.md	/^## CMS$/;"	s	chapter:Virtual Machines
+CVE-2017-7494	galaxy_roles/bertvv.samba/README.md	/^## CVE-2017-7494$/;"	s	chapter:Ansible role `bertvv.samba`
+Change log	galaxy_roles/bertvv.samba/CHANGELOG.md	/^# Change log$/;"	c
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## Changed$/;"	s	chapter:Change log
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.0.0 - 2015-11-05
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.0.1 - 2015-11-05
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.0.2 - 2015-12-01
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.1.0 - 2016-05-12
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.1.1 - 2016-05-29
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.2.2 - 2017-01-20
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.3.0 - 2017-05-10
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.3.1 - 2017-05-29
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.4.0 - 2017-09-15
+Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changed$/;"	S	section:Change log""2.6.0 - 2018-08-16
+Changelog	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^# Changelog$/;"	c
+Changes	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Changes$/;"	S	section:Change log""2.2.1 - 2016-10-29
+Changing the default port and idempotency	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Changing the default port and idempotency$/;"	s	chapter:ssh-hardening (Ansible Role)
+Check current docker-compose version.	galaxy_roles/geerlingguy.docker/tasks/docker-compose.yml	/^- name: Check current docker-compose version.$/;"	p
+Communication	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^## Communication$/;"	s	chapter:Contributor Guideline
+Configure Docker Nightly repo.	galaxy_roles/geerlingguy.docker/tasks/setup-RedHat.yml	/^- name: Configure Docker Nightly repo.$/;"	p
+Configure Docker Test repo.	galaxy_roles/geerlingguy.docker/tasks/setup-RedHat.yml	/^- name: Configure Docker Test repo.$/;"	p
+Configure Docker daemon options.	galaxy_roles/geerlingguy.docker/tasks/main.yml	/^- name: Configure Docker daemon options.$/;"	p
+Configure containerd on RHEL 8.	galaxy_roles/geerlingguy.docker/tasks/setup-RedHat.yml	/^- name: Configure containerd on RHEL 8.$/;"	p
+Configuring settings not listed in role-variables	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Configuring settings not listed in role-variables$/;"	s	chapter:ssh-hardening (Ansible Role)
+Contributing	galaxy_roles/bertvv.samba/README.md	/^## Contributing$/;"	s	chapter:Ansible role `bertvv.samba`
+Contributing	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Contributing$/;"	s	chapter:ssh-hardening (Ansible Role)
+Contributor Guideline	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^# Contributor Guideline$/;"	c
+Contributors	galaxy_roles/bertvv.samba/README.md	/^## Contributors$/;"	s	chapter:Ansible role `bertvv.samba`
+Converge	galaxy_roles/geerlingguy.docker/molecule/default/converge.yml	/^- name: Converge$/;"	p
+Converge	galaxy_roles/geerlingguy.ntp/molecule/default/converge.yml	/^- name: Converge$/;"	p
+Copy .bash_aliases	roles/base-packages/tasks/main.yml	/^- name: Copy .bash_aliases$/;"	p
+Copy vimrc	roles/base-packages/tasks/main.yml	/^- name: Copy vimrc$/;"	p
+Create .vim folder	roles/base-packages/tasks/main.yml	/^- name: Create .vim folder$/;"	p
 Create Gitea Directories	roles/gitea/tasks/main.yml	/^- name: Create Gitea Directories$/;"	p
 Create Gitea container	roles/gitea/tasks/main.yml	/^- name: Create Gitea container$/;"	p
 Create Gitea group account	roles/gitea/tasks/main.yml	/^- name: Create Gitea group account$/;"	p
@@ -21,57 +105,232 @@ Create Heimdall group	roles/heimdall/tasks/main.yml	/^- name: Create Heimdall gr
 Create Heimdall user	roles/heimdall/tasks/main.yml	/^- name: Create Heimdall user$/;"	p
 Create Jellyfin directories	roles/jellyfin/tasks/main.yml	/^- name: Create Jellyfin directories$/;"	p
 Create MySQL container for Gitea	roles/gitea/tasks/main.yml	/^- name: Create MySQL container for Gitea$/;"	p
+Create Samba shares root directory	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Create Samba shares root directory$/;"	p
+Create Samba users if they don't exist yet	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Create Samba users if they don't exist yet$/;"	p
 Create bookstack_directories	roles/bookstack/tasks/main.yml	/^- name: Create bookstack_directories$/;"	p
 Create heimdall directories	roles/heimdall/tasks/main.yml	/^- name: Create heimdall directories$/;"	p
 Create jackett directories	roles/jackett/tasks/main.yml	/^- name: Create jackett directories$/;"	p
+Create link to shares in webserver document root	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Create link to shares in webserver document root$/;"	p
 Create nzbget directories	roles/nzbget/tasks/main.yml	/^- name: Create nzbget directories$/;"	p
 Create plex directories	roles/plex/tasks/main.yml	/^- name: Create plex directories$/;"	p
 Create portainer directories	roles/portainer/tasks/main.yml	/^- name: Create portainer directories$/;"	p
 Create radarr directories	roles/radarr/tasks/main.yml	/^- name: Create radarr directories$/;"	p
+Create share directories	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Create share directories$/;"	p
 Create sickchill directories	roles/sickchill/tasks/main.yml	/^- name: Create sickchill directories$/;"	p
 Create sonarr directories	roles/sonarr/tasks/main.yml	/^- name: Create sonarr directories$/;"	p
 Create tandoor directories	roles/tandoor/tasks/main.yml	/^- name: Create tandoor directories$/;"	p
 Create tandoor group	roles/tandoor/tasks/main.yml	/^- name: Create tandoor group$/;"	p
 Create tandoor user	roles/tandoor/tasks/main.yml	/^- name: Create tandoor user$/;"	p
+Create username map file if needed	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Create username map file if needed$/;"	p
+Defining shares	galaxy_roles/bertvv.samba/README.md	/^### Defining shares$/;"	S	section:Ansible role `bertvv.samba`""Role Variables
+Defining users	galaxy_roles/bertvv.samba/README.md	/^### Defining users$/;"	S	section:Ansible role `bertvv.samba`""Role Variables
+Delete existing docker-compose version if it's different.	galaxy_roles/geerlingguy.docker/tasks/docker-compose.yml	/^- name: Delete existing docker-compose version if it's different.$/;"	p
+Dependencies	galaxy_roles/bertvv.samba/README.md	/^## Dependencies$/;"	s	chapter:Ansible role `bertvv.samba`
+Dependencies	galaxy_roles/geerlingguy.docker/README.md	/^## Dependencies$/;"	s	chapter:Ansible Role: Docker
+Dependencies	galaxy_roles/geerlingguy.ntp/README.md	/^## Dependencies$/;"	s	chapter:Ansible Role: NTP
+Description	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Description$/;"	s	chapter:ssh-hardening (Ansible Role)
+Disable systemd-timesyncd if it's running but ntp is enabled.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Disable systemd-timesyncd if it's running but ntp is enabled.$/;"	p
+Document your code	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Document your code$/;"	S	section:Contributor Guideline""Expectations
+Don't reinvent the wheel	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Don't reinvent the wheel$/;"	S	section:Contributor Guideline""Expectations
+Ensure /etc/docker/ directory exists.	galaxy_roles/geerlingguy.docker/tasks/main.yml	/^- name: Ensure \/etc\/docker\/ directory exists.$/;"	p
+Ensure Docker is started and enabled at boot.	galaxy_roles/geerlingguy.docker/tasks/main.yml	/^- name: Ensure Docker is started and enabled at boot.$/;"	p
+Ensure NTP is running and enabled as configured.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Ensure NTP is running and enabled as configured.$/;"	p
+Ensure NTP is stopped and disabled as configured.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Ensure NTP is stopped and disabled as configured.$/;"	p
+Ensure NTP package is installed.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Ensure NTP package is installed.$/;"	p
+Ensure additional dependencies are installed (on Ubuntu < 20.04 and any other systems).	galaxy_roles/geerlingguy.docker/tasks/setup-Debian.yml	/^- name: Ensure additional dependencies are installed (on Ubuntu < 20.04 and any other systems).$/;"	p
+Ensure additional dependencies are installed (on Ubuntu >= 20.04).	galaxy_roles/geerlingguy.docker/tasks/setup-Debian.yml	/^- name: Ensure additional dependencies are installed (on Ubuntu >= 20.04).$/;"	p
+Ensure curl is present (on older systems without SNI).	galaxy_roles/geerlingguy.docker/tasks/setup-Debian.yml	/^- name: Ensure curl is present (on older systems without SNI).$/;"	p
+Ensure dependencies are installed.	galaxy_roles/geerlingguy.docker/tasks/setup-Debian.yml	/^- name: Ensure dependencies are installed.$/;"	p
+Ensure docker users are added to the docker group.	galaxy_roles/geerlingguy.docker/tasks/docker-users.yml	/^- name: Ensure docker users are added to the docker group.$/;"	p
+Ensure handlers are notified now to avoid firewall conflicts.	galaxy_roles/geerlingguy.docker/tasks/main.yml	/^- name: Ensure handlers are notified now to avoid firewall conflicts.$/;"	p
+Ensure old versions of Docker are not installed.	galaxy_roles/geerlingguy.docker/tasks/setup-Debian.yml	/^- name: Ensure old versions of Docker are not installed.$/;"	p
+Ensure old versions of Docker are not installed.	galaxy_roles/geerlingguy.docker/tasks/setup-RedHat.yml	/^- name: Ensure old versions of Docker are not installed.$/;"	p
+Ensure tzdata package is installed (Linux).	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Ensure tzdata package is installed (Linux).$/;"	p
+Ensure webserver document root exists	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Ensure webserver document root exists$/;"	p
+Example Playbook	galaxy_roles/bertvv.samba/README.md	/^## Example Playbook$/;"	s	chapter:Ansible role `bertvv.samba`
+Example Playbook	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Example Playbook$/;"	s	chapter:ssh-hardening (Ansible Role)
+Example Playbook	galaxy_roles/geerlingguy.docker/README.md	/^## Example Playbook$/;"	s	chapter:Ansible Role: Docker
+Example Playbook	galaxy_roles/geerlingguy.ntp/README.md	/^## Example Playbook$/;"	s	chapter:Ansible Role: NTP
+Expectations	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^## Expectations$/;"	s	chapter:Contributor Guideline
+FAQ / Pitfalls	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## FAQ \/ Pitfalls$/;"	s	chapter:ssh-hardening (Ansible Role)
+Follow coding styles	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Follow coding styles$/;"	S	section:Contributor Guideline""Expectations
+Generate ntp configuration file.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Generate ntp configuration file.$/;"	p
+GitHub repositories	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### GitHub repositories$/;"	S	section:Contributor Guideline""Communication
 Gitea	roles/gitea/README.md	/^# Gitea$/;"	c
 HoldPkg	roles/userconfig/files/etc/pacman.conf	/^HoldPkg     = pacman glibc$/;"	k	section:options
 Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:community
 Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:core
 Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:extra
 Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:multilib
+Include OS specific variables	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Include OS specific variables$/;"	p
+Include OS-specific variables.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Include OS-specific variables.$/;"	p
+Install Docker Compose (if configured).	galaxy_roles/geerlingguy.docker/tasks/docker-compose.yml	/^- name: Install Docker Compose (if configured).$/;"	p
+Install Docker.	galaxy_roles/geerlingguy.docker/tasks/main.yml	/^- name: Install Docker.$/;"	p
+Install SELinux package	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Install SELinux package$/;"	p
+Install Samba VFS extensions packages	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Install Samba VFS extensions packages$/;"	p
+Install Samba packages	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Install Samba packages$/;"	p
 Install base packages	roles/base-packages/tasks/main.yml	/^- name: Install base packages$/;"	p
+Install global include file	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Install global include file$/;"	p
 Install heimdall Docker Container	roles/heimdall/tasks/main.yml	/^- name: Install heimdall Docker Container$/;"	p
+Install home include file	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Install home include file$/;"	p
+Install share specific include files	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Install share specific include files$/;"	p
 Install tandoor Docker Container	roles/tandoor/tasks/main.yml	/^- name: Install tandoor Docker Container$/;"	p
 Install tandoor NGINX Docker Container	roles/tandoor/tasks/main.yml	/^- name: Install tandoor NGINX Docker Container$/;"	p
+Issues	README.md	/^## Issues$/;"	s	chapter:homelab-segmented
 Jellyfin Docker Container	roles/jellyfin/tasks/main.yml	/^- name: Jellyfin Docker Container$/;"	p
+License	galaxy_roles/bertvv.samba/README.md	/^## License$/;"	s	chapter:Ansible role `bertvv.samba`
+License	galaxy_roles/geerlingguy.docker/README.md	/^## License$/;"	s	chapter:Ansible Role: Docker
+License	galaxy_roles/geerlingguy.ntp/README.md	/^## License$/;"	s	chapter:Ansible Role: NTP
+License and Author	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## License and Author$/;"	s	chapter:ssh-hardening (Ansible Role)
+Loaded	README.md	/^## Loaded$/;"	s	chapter:homelab-segmented
+Local Testing	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Local Testing$/;"	s	chapter:ssh-hardening (Ansible Role)
+Make sure SELinux boolean settings are correct	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Make sure SELinux boolean settings are correct$/;"	p
 Media	documentation/segmentation.md	/^## Media$/;"	s	chapter:Virtual Machines
 Monitoring	documentation/segmentation.md	/^## Monitoring$/;"	s	chapter:Virtual Machines
 Network Routing	documentation/segmentation.md	/^## Network Routing$/;"	s	chapter:Virtual Machines
 Perform full patching	roles/userconfig/tasks/main.yml	/^- name: Perform full patching$/;"	p
 Plex Docker Container	roles/plex/tasks/main.yml	/^- name: Plex Docker Container$/;"	p
+Populate service facts.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Populate service facts.$/;"	p
+Register Samba version	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Register Samba version$/;"	p
+Removed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Removed$/;"	S	section:Change log""2.0.0 - 2015-11-05
+Removed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Removed$/;"	S	section:Change log""2.0.2 - 2015-12-01
+Removed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^### Removed$/;"	S	section:Change log""2.1.0 - 2016-05-12
+Requirements	galaxy_roles/bertvv.samba/README.md	/^## Requirements$/;"	s	chapter:Ansible role `bertvv.samba`
+Requirements	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Requirements$/;"	s	chapter:ssh-hardening (Ansible Role)
+Requirements	galaxy_roles/geerlingguy.docker/README.md	/^## Requirements$/;"	s	chapter:Ansible Role: Docker
+Requirements	galaxy_roles/geerlingguy.ntp/README.md	/^## Requirements$/;"	s	chapter:Ansible Role: NTP
+Restart Samba services	galaxy_roles/bertvv.samba/handlers/main.yml	/^- name: Restart Samba services$/;"	p
+Role Variables	galaxy_roles/bertvv.samba/README.md	/^## Role Variables$/;"	s	chapter:Ansible role `bertvv.samba`
+Role Variables	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Role Variables$/;"	s	chapter:ssh-hardening (Ansible Role)
+Role Variables	galaxy_roles/geerlingguy.docker/README.md	/^## Role Variables$/;"	s	chapter:Ansible Role: Docker
+Role Variables	galaxy_roles/geerlingguy.ntp/README.md	/^## Role Variables$/;"	s	chapter:Ansible Role: NTP
+Samba configuration	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Samba configuration$/;"	p
+Set the ntp_config_file variable.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Set the ntp_config_file variable.$/;"	p
+Set the ntp_daemon variable.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Set the ntp_daemon variable.$/;"	p
+Set the ntp_driftfile variable.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Set the ntp_driftfile variable.$/;"	p
+Set the ntp_package variable.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Set the ntp_package variable.$/;"	p
+Set timezone.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Set timezone.$/;"	p
 SigLevel	roles/userconfig/files/etc/pacman.conf	/^SigLevel = PackageRequired$/;"	k	section:community
 SigLevel	roles/userconfig/files/etc/pacman.conf	/^SigLevel = PackageRequired$/;"	k	section:core
 SigLevel	roles/userconfig/files/etc/pacman.conf	/^SigLevel = PackageRequired$/;"	k	section:extra
+Start Samba service(s)	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Start Samba service(s)$/;"	p
 Tandoor DB Docker Container	roles/tandoor/tasks/main.yml	/^- name: Tandoor DB Docker Container$/;"	p
+Testing	galaxy_roles/bertvv.samba/README.md	/^## Testing$/;"	s	chapter:Ansible role `bertvv.samba`
+Testing with Docker	galaxy_roles/dev-sec.ssh-hardening/README.md	/^### Testing with Docker$/;"	S	section:ssh-hardening (Ansible Role)""Local Testing
+Testing with Virtualbox	galaxy_roles/dev-sec.ssh-hardening/README.md	/^### Testing with Virtualbox$/;"	S	section:ssh-hardening (Ansible Role)""Local Testing
+TrimWhiteSpace	roles/base-packages/files/vimrc	/^function! TrimWhiteSpace()$/;"	f
+Untested	README.md	/^## Untested$/;"	s	chapter:homelab-segmented
+Update all packages to the latest version	roles/base-packages/tasks/main.yml	/^- name: Update all packages to the latest version$/;"	p
+Update and upgrade apt packages	roles/base-packages/tasks/main.yml	/^- name: 'Update and upgrade apt packages'$/;"	p
+Use Markdown	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Use Markdown$/;"	S	section:Contributor Guideline""Expectations
+Use with Ansible (and `docker` Python library)	galaxy_roles/geerlingguy.docker/README.md	/^## Use with Ansible (and `docker` Python library)$/;"	s	chapter:Ansible Role: Docker
+Verified	README.md	/^## Verified$/;"	s	chapter:homelab-segmented
 Virtual Machines	documentation/segmentation.md	/^# Virtual Machines$/;"	c
+[1.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.0.0) (2015-04-30)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.0.0) (2015-04-30)$/;"	s	chapter:Changelog
+[1.1.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.1.0) (2015-09-01)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.1.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.1.0) (2015-09-01)$/;"	s	chapter:Changelog
+[1.1](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.1) (2015-09-01)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.1](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.1) (2015-09-01)$/;"	s	chapter:Changelog
+[1.2.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.2.0) (2015-09-28)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.2.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.2.0) (2015-09-28)$/;"	s	chapter:Changelog
+[1.2.1](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.2.1) (2015-10-16)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.2.1](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.2.1) (2015-10-16)$/;"	s	chapter:Changelog
+[1.2](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.2) (2015-09-28)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.2](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.2) (2015-09-28)$/;"	s	chapter:Changelog
+[2.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/2.0.0) (2015-11-28)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [2.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/2.0.0) (2015-11-28)$/;"	s	chapter:Changelog
+[3.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/3.0.0) (2016-03-13)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [3.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/3.0.0) (2016-03-13)$/;"	s	chapter:Changelog
+[3.1.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/3.1.0) (2016-08-03)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [3.1.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/3.1.0) (2016-08-03)$/;"	s	chapter:Changelog
+[3.1](https://github.com/dev-sec/ansible-ssh-hardening/tree/3.1) (2016-08-03)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [3.1](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/3.1) (2016-08-03)$/;"	s	chapter:Changelog
+[3.2.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/3.2.0) (2016-10-24)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [3.2.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/3.2.0) (2016-10-24)$/;"	s	chapter:Changelog
+[4.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.0.0) (2017-04-22)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.0.0) (2017-04-22)$/;"	s	chapter:Changelog
+[4.1.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.1.0) (2017-05-09)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.1.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.1.0) (2017-05-09)$/;"	s	chapter:Changelog
+[4.1.1](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.1.1) (2017-05-18)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.1.1](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.1.1) (2017-05-18)$/;"	s	chapter:Changelog
+[4.1.2](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.1.2) (2017-05-31)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.1.2](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.1.2) (2017-05-31)$/;"	s	chapter:Changelog
+[4.1.3](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.1.3) (2017-06-30)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.1.3](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.1.3) (2017-06-30)$/;"	s	chapter:Changelog
+[4.2.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.2.0) (2017-06-30)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.2.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.2.0) (2017-06-30)$/;"	s	chapter:Changelog
+[4.3.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.3.0) (2017-08-03)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.3.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.3.0) (2017-08-03)$/;"	s	chapter:Changelog
+[4.3.1](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.3.1) (2017-08-14)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.3.1](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.3.1) (2017-08-14)$/;"	s	chapter:Changelog
+[4.4.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/4.4.0) (2017-12-29)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [4.4.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/4.4.0) (2017-12-29)$/;"	s	chapter:Changelog
+[5.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/5.0.0) (2018-09-16)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [5.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/5.0.0) (2018-09-16)$/;"	s	chapter:Changelog
+[6.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/6.0.0) (2018-11-18)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [6.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/6.0.0) (2018-11-18)$/;"	s	chapter:Changelog
+[6.1.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/6.1.0) (2019-05-04)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [6.1.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/6.1.0) (2019-05-04)$/;"	s	chapter:Changelog
+[6.1.1](https://github.com/dev-sec/ansible-ssh-hardening/tree/6.1.1) (2019-05-07)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [6.1.1](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/6.1.1) (2019-05-07)$/;"	s	chapter:Changelog
+[6.1.2](https://github.com/dev-sec/ansible-ssh-hardening/tree/6.1.2) (2019-05-17)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [6.1.2](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/6.1.2) (2019-05-17)$/;"	s	chapter:Changelog
+[6.1.3](https://github.com/dev-sec/ansible-ssh-hardening/tree/6.1.3) (2019-06-09)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [6.1.3](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/6.1.3) (2019-06-09)$/;"	s	chapter:Changelog
+[6.2.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/6.2.0) (2019-08-05)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [6.2.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/6.2.0) (2019-08-05)$/;"	s	chapter:Changelog
+[7.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/7.0.0) (2019-09-15)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [7.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/7.0.0) (2019-09-15)$/;"	s	chapter:Changelog
+[8.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/8.0.0) (2020-04-21)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [8.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/8.0.0) (2020-04-21)$/;"	s	chapter:Changelog
+[8.1.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/8.1.0) (2020-05-09)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [8.1.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/8.1.0) (2020-05-09)$/;"	s	chapter:Changelog
+[9.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.0.0) (2020-05-18)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.0.0) (2020-05-18)$/;"	s	chapter:Changelog
+[9.1.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.1.0) (2020-06-02)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.1.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.1.0) (2020-06-02)$/;"	s	chapter:Changelog
+[9.1.1](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.1.1) (2020-06-06)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.1.1](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.1.1) (2020-06-06)$/;"	s	chapter:Changelog
+[9.2.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.2.0) (2020-06-25)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.2.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.2.0) (2020-06-25)$/;"	s	chapter:Changelog
+[9.3.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.3.0) (2020-07-09)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.3.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.3.0) (2020-07-09)$/;"	s	chapter:Changelog
+[9.4.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.4.0) (2020-07-21)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.4.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.4.0) (2020-07-21)$/;"	s	chapter:Changelog
+[9.5.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.5.0) (2020-07-27)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.5.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.5.0) (2020-07-27)$/;"	s	chapter:Changelog
+[9.6.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.6.0) (2020-07-28)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.6.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.6.0) (2020-07-28)$/;"	s	chapter:Changelog
+[9.7.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/9.7.0) (2020-08-09)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [9.7.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/9.7.0) (2020-08-09)$/;"	s	chapter:Changelog
 all	Makefile	/^all: update$/;"	t
+authorize {{ ssh_server_ports }} ports for selinux	galaxy_roles/dev-sec.ssh-hardening/tasks/selinux.yml	/^- name: authorize {{ ssh_server_ports }} ports for selinux$/;"	p
 bertvv.samba	requirements.yml	/^- name: bertvv.samba$/;"	p
 bookstack_Docker Container	roles/bookstack/tasks/main.yml	/^- name: bookstack_Docker Container$/;"	p
+check if ssh_password module is already installed	galaxy_roles/dev-sec.ssh-hardening/tasks/selinux.yml	/^- name: check if ssh_password module is already installed$/;"	p
+check if {{ sshd_moduli_file }} contains weak DH parameters	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: check if {{ sshd_moduli_file }} contains weak DH parameters$/;"	p
 community	roles/userconfig/files/etc/pacman.conf	/^[community]$/;"	s
 core	roles/userconfig/files/etc/pacman.conf	/^[core]$/;"	s
+create revoked_keys and set permissions to root/600	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: create revoked_keys and set permissions to root\/600$/;"	p
+create ssh authorized principals directories	galaxy_roles/dev-sec.ssh-hardening/tasks/ca_keys_and_principals.yml	/^- name: create ssh authorized principals directories$/;"	p
+create ssh_config and set permissions to root/644	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: create ssh_config and set permissions to root\/644$/;"	p
+create sshd_config and set permissions to root/600	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: create sshd_config and set permissions to root\/600$/;"	p
 dev-sec.ssh-hardening	requirements.yml	/^- name: dev-sec.ssh-hardening$/;"	p
+disable SSH server CRYPTO_POLICY	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: disable SSH server CRYPTO_POLICY$/;"	p
+disable dynamic MOTD	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: disable dynamic MOTD$/;"	p
 extra	roles/userconfig/files/etc/pacman.conf	/^[extra]$/;"	s
+galaxy	Makefile	/^galaxy:$/;"	t
+gather package facts	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: gather package facts$/;"	p
 geerlingguy.docker	requirements.yml	/^- name: geerlingguy.docker$/;"	p
 geerlingguy.ntp	requirements.yml	/^- name: geerlingguy.ntp$/;"	p
-homelab-segmented	README.md	/^# homelab-segmented/;"	c
+get openssh-version	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: get openssh-version$/;"	p
+git and GitHub	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^## git and GitHub$/;"	s	chapter:Contributor Guideline
+homelab-segmented	README.md	/^# homelab-segmented$/;"	c
+include selinux specific tasks	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: include selinux specific tasks$/;"	p
+include tasks to setup ca keys and principals	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: include tasks to setup ca keys and principals$/;"	p
+install selinux dependencies when selinux is installed	galaxy_roles/dev-sec.ssh-hardening/tasks/selinux.yml	/^- name: install selinux dependencies when selinux is installed$/;"	p
 jackett Docker Container	roles/jackett/tasks/main.yml	/^- name: jackett Docker Container$/;"	p
+mapleader	roles/base-packages/files/vimrc	/^let mapleader                               = "\\<Space>"$/;"	v
+maplocalleader	roles/base-packages/files/vimrc	/^let maplocalleader                          = ",,"$/;"	v
 mariadb Docker Container	roles/bookstack/tasks/main.yml	/^- name: mariadb Docker Container$/;"	p
 multilib	roles/userconfig/files/etc/pacman.conf	/^[multilib]$/;"	s
 nzbget Docker Container	roles/nzbget/tasks/main.yml	/^- name: nzbget Docker Container$/;"	p
 options	roles/userconfig/files/etc/pacman.conf	/^[options]$/;"	s
+parse openssh-version	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: parse openssh-version$/;"	p
 portainer Docker Container	roles/portainer/tasks/main.yml	/^- name: portainer Docker Container$/;"	p
-provision	Makefile	/^provision:$/;"	t
+provision	Makefile	/^provision: galaxy$/;"	t
 radarr Docker Container	roles/radarr/tasks/main.yml	/^- name: radarr Docker Container$/;"	p
+remove all small primes	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: remove all small primes$/;"	p
+remove selinux-policy when Pam is used, because Allowing sshd to read the shadow file directly is considered a potential security risk	galaxy_roles/dev-sec.ssh-hardening/tasks/selinux.yml	/^- name: remove selinux-policy when Pam is used, because Allowing sshd to read the shadow file di/;"	p
+restart cron	galaxy_roles/geerlingguy.ntp/handlers/main.yml	/^- name: restart cron$/;"	p
+restart docker	galaxy_roles/geerlingguy.docker/handlers/main.yml	/^- name: restart docker$/;"	p
+restart ntp	galaxy_roles/geerlingguy.ntp/handlers/main.yml	/^- name: restart ntp$/;"	p
+restart sshd	galaxy_roles/dev-sec.ssh-hardening/handlers/main.yml	/^- name: restart sshd$/;"	p
+set OS dependent variables	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: set OS dependent variables$/;"	p
+set ciphers according to openssh-version if openssh >= 5.3	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_ciphers.yml	/^- name: set ciphers according to openssh-version if openssh >= 5.3$/;"	p
+set ciphers according to openssh-version if openssh >= 6.6	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_ciphers.yml	/^- name: set ciphers according to openssh-version if openssh >= 6.6$/;"	p
+set default for ssh_ciphers if not supplied	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: set default for ssh_ciphers if not supplied$/;"	p
+set default for ssh_host_key_files if not supplied	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: set default for ssh_host_key_files if not supplied$/;"	p
+set default for ssh_kex if not supplied	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: set default for ssh_kex if not supplied$/;"	p
+set default for ssh_macs if not supplied	galaxy_roles/dev-sec.ssh-hardening/tasks/hardening.yml	/^- name: set default for ssh_macs if not supplied$/;"	p
+set hostkeys according to openssh-version if openssh >= 5.3	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_hostkeys.yml	/^- name: set hostkeys according to openssh-version if openssh >= 5.3$/;"	p
+set hostkeys according to openssh-version if openssh >= 6.0	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_hostkeys.yml	/^- name: set hostkeys according to openssh-version if openssh >= 6.0$/;"	p
+set hostkeys according to openssh-version if openssh >= 6.3	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_hostkeys.yml	/^- name: set hostkeys according to openssh-version if openssh >= 6.3$/;"	p
+set kex according to openssh-version if openssh >= 5.9	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_kex.yml	/^- name: set kex according to openssh-version if openssh >= 5.9$/;"	p
+set kex according to openssh-version if openssh >= 6.6	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_kex.yml	/^- name: set kex according to openssh-version if openssh >= 6.6$/;"	p
+set kex according to openssh-version if openssh >= 8.0	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_kex.yml	/^- name: set kex according to openssh-version if openssh >= 8.0$/;"	p
+set macs according to openssh-version if openssh >= 5.3	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_macs.yml	/^- name: set macs according to openssh-version if openssh >= 5.3$/;"	p
+set macs according to openssh-version if openssh >= 5.9	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_macs.yml	/^- name: set macs according to openssh-version if openssh >= 5.9$/;"	p
+set macs according to openssh-version if openssh >= 6.6	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_macs.yml	/^- name: set macs according to openssh-version if openssh >= 6.6$/;"	p
+set macs according to openssh-version if openssh >= 7.6	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_macs.yml	/^- name: set macs according to openssh-version if openssh >= 7.6$/;"	p
+set macs for Enterprise Linux >= 6.5 (openssh 5.3 with backports)	galaxy_roles/dev-sec.ssh-hardening/tasks/crypto_macs.yml	/^- name: set macs for Enterprise Linux >= 6.5 (openssh 5.3 with backports)$/;"	p
+set ssh CA pub keys	galaxy_roles/dev-sec.ssh-hardening/tasks/ca_keys_and_principals.yml	/^- name: set ssh CA pub keys$/;"	p
+set ssh authorized principals	galaxy_roles/dev-sec.ssh-hardening/tasks/ca_keys_and_principals.yml	/^- name: set ssh authorized principals$/;"	p
 sickchill Docker Container	roles/sickchill/tasks/main.yml	/^- name: sickchill Docker Container$/;"	p
 sonarr Docker Container	roles/sonarr/tasks/main.yml	/^- name: sonarr Docker Container$/;"	p
+ssh-hardening (Ansible Role)	galaxy_roles/dev-sec.ssh-hardening/README.md	/^# ssh-hardening (Ansible Role)$/;"	c
 update	Makefile	/^update:$/;"	t
+wrapper playbook for kitchen testing "ansible-ssh-hardening" with custom settings	galaxy_roles/dev-sec.ssh-hardening/tests/default_custom.yml	/^- name: wrapper playbook for kitchen testing "ansible-ssh-hardening" with custom settings$/;"	p
+wrapper playbook for kitchen testing "ansible-ssh-hardening" with default settings	galaxy_roles/dev-sec.ssh-hardening/tests/default.yml	/^- name: wrapper playbook for kitchen testing "ansible-ssh-hardening" with default settings$/;"	p

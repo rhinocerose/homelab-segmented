@@ -4,32 +4,22 @@
   user: arch
   become: yes
   roles:
+
     - role: base-packages
-    
-    - role: geerlingguy.docker
-      tags: 
-        - docker
-        
-    - role: docker
-      tags: 
-        - docker
-        
-    - role: monitoring
-      tags:
-        - monitoring
-        
-    - role: media
-      tags: 
-        - media
-        
-    - role: git-hosting
-      tags:
-        - git-hosting
-        
+
+    # - role: geerlingguy.docker
+    #   tags:
+    #     - docker
+
     - role: plex
       tags:
         - plex
       when: (plex_enabled | default(False))
+
+    - role: jellyfin
+      tags:
+        - jellyfin
+      when: (jellyfin_enabled | default(False))
 
     - role: radarr
       tags:
@@ -45,3 +35,19 @@
       tags:
         - sonarr
       when: (sonarr_enabled | default(False))
+
+    - role: portainer
+      tags:
+        - portainer
+      when: (portainer_enabled | default(False))
+
+    - role: heimdall
+      tags:
+        - heimdall
+      when: (heimdall_enabled | default(False))
+
+    - role: bookstack
+      tags:
+        - bookstack
+      when: (bookstack_enabled | default(False))
+

@@ -1,7 +1,7 @@
 ---
 portainer_enabled: false
 portainer_available_externally: false
-portainer_container_name: portainer
+portainer_container_name: portainer-ce
 portainer_container_store: portainer
 portainer_config_directory: "{{ docker_app_data }}/portainer"
 portainer_version: latest

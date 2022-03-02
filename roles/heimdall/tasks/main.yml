@@ -15,7 +15,7 @@
     update_password: on_create
     create_home: no
     group: heimdall
-    
+
 - name: Create heimdall directories
   file:
     path: "{{ item }}"
@@ -39,14 +39,14 @@
       - "{{ heimdall_port_https }}:443"
     env:
       TZ: "{{ system.timezone }}"
-      PUID: "{{ heimdall_user_id | string }}"
-      PGID: "{{ heimdall_user_id | string }}"
+      PUID: "{{ heimdall_uid | string }}"
+      PGID: "{{ heimdall_gid | string }}"
     restart_policy: unless-stopped
     memory: "{{ heimdall_memory }}"
-    labels:
-      traefik.enable: "{{ heimdall_available_externally }}"
-      traefik.http.routers.heimdall.rule: "Host(`{{ heimdall_hostname }}.{{ external_domain }}`)"
-      traefik.http.routers.heimdall.tls.certresolver: "letsencrypt"
-      traefik.http.routers.heimdall.tls.domains[0].main: "{{ external_domain }}"
-      traefik.http.routers.heimdall.tls.domains[0].sans: "*.{{ external_domain }}"
-      traefik.http.services.heimdall.loadbalancer.server.port: "80"
+    # labels:
+    #   traefik.enable: "{{ heimdall_available_externally }}"
+    #   traefik.http.routers.heimdall.rule: "Host(`{{ heimdall_hostname }}.{{ external_domain }}`)"
+    #   traefik.http.routers.heimdall.tls.certresolver: "letsencrypt"
+    #   traefik.http.routers.heimdall.tls.domains[0].main: "{{ external_domain }}"
+    #   traefik.http.routers.heimdall.tls.domains[0].sans: "*.{{ external_domain }}"
+    #   traefik.http.services.heimdall.loadbalancer.server.port: "80"

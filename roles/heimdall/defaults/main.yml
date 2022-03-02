@@ -5,7 +5,7 @@ heimdall_container_name: heimdall
 heimdall_container_store: linuxserver
 heimdall_config_directory: "{{ docker_app_data }}/heimdall"
 heimdall_version: latest
-heimdall_port_http: 10080
+heimdall_port_http: 10180
 heimdall_port_https: 10443
 heimdall_hostname: heimdall
 heimdall_uid: "1310"

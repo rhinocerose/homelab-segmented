@@ -36,10 +36,10 @@
     restart_policy: unless-stopped
     restart_policy: unless-stopped
     memory: "{{ plex_memory }}"
-    labels:
-      traefik.enable: "{{ plex_available_externally }}"
-      traefik.http.routers.plex.rule: "Host(`{{ plex_hostname }}.{{ external_domain }}`)"
-      traefik.http.routers.plex.tls.certresolver: "letsencrypt"
-      traefik.http.routers.plex.tls.domains[0].main: "{{ external_domain }}"
-      traefik.http.routers.plex.tls.domains[0].sans: "*.{{ external_domain }}"
-      traefik.http.services.plex.loadbalancer.server.port: "32400"
+    # labels:
+    #   traefik.enable: "{{ plex_available_externally }}"
+    #   traefik.http.routers.plex.rule: "Host(`{{ plex_hostname }}.{{ external_domain }}`)"
+    #   traefik.http.routers.plex.tls.certresolver: "letsencrypt"
+    #   traefik.http.routers.plex.tls.domains[0].main: "{{ external_domain }}"
+    #   traefik.http.routers.plex.tls.domains[0].sans: "*.{{ external_domain }}"
+    #   traefik.http.services.plex.loadbalancer.server.port: "32400"

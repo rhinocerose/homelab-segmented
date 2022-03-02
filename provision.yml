@@ -1,6 +1,6 @@
 ---
 
-- hosts: vultr1
+- hosts: all
   user: root
   roles:
     - role: userconfig

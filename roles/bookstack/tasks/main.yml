@@ -50,11 +50,11 @@
       DB_PASS: "{{ bookstack_db_root_password }}"
       DB_DATABASE: "{{ bookstack_db_name }}"
     restart_policy: unless-stopped
-    memory: "{{ heimdall_memory }}"
-    labels:
-      traefik.enable: "{{ bookstack_available_externally }}"
-      traefik.http.routers.bookstack.rule: "Host(`{{ bookstack_hostname }}.{{ external_domain }}`)"
-      traefik.http.routers.bookstack.tls.certresolver: "letsencrypt"
-      traefik.http.routers.bookstack.tls.domains[0].main: "{{ external_domain }}"
-      traefik.http.routers.bookstack.tls.domains[0].sans: "*.{{ external_domain }}"
-      traefik.http.services.bookstack.loadbalancer.server.port: "80"
+    memory: "{{ bookstack_memory }}"
+    # labels:
+    #   traefik.enable: "{{ bookstack_available_externally }}"
+    #   traefik.http.routers.bookstack.rule: "Host(`{{ bookstack_hostname }}.{{ external_domain }}`)"
+    #   traefik.http.routers.bookstack.tls.certresolver: "letsencrypt"
+    #   traefik.http.routers.bookstack.tls.domains[0].main: "{{ external_domain }}"
+    #   traefik.http.routers.bookstack.tls.domains[0].sans: "*.{{ external_domain }}"
+    #   traefik.http.services.bookstack.loadbalancer.server.port: "80"

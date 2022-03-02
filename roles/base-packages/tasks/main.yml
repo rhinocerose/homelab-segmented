@@ -1,24 +1,54 @@
 ---
 
-# - name: 'Update and upgrade apt packages'
-#   become: yes
-#   apt:
-#     upgrade: yes
-#     update_cache: yes
-#     cache_valid_time: 86400
+- name: 'Update and upgrade apt packages'
+  become: yes
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400
 
-# - name: Update all packages to the latest version
-#   become: yes
-#   become_method: sudo
-#   apt:
-#     upgrade: dist
+- name: Update all packages to the latest version
+  become: yes
+  become_method: sudo
+  apt:
+    upgrade: dist
 
 - name: Install base packages
   apt:
     name: "{{ base.packages }}"
     state: latest
 
+- name: Copy .bash_aliases
+  copy:
+    src: ".bash_aliases"
+    dest: "/home/{{ user_name }}/.bash_aliases"
+    mode: 0644
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+  tags:
+    - update
 
+- name: Create .vim folder
+  file:
+    path: "/home/{{ user_name }}/.vim"
+    state: directory
+    mode: 0755
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+  tags:
+    - update
+
+- name: Copy vimrc
+  copy:
+    src: "vimrc"
+    dest: "/home/{{ user_name }}/.vim/vimrc"
+    mode: 0644
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+  tags:
+    - update
+    - build
+    - pi_gen
 # Next two based on: https://github.com/palcu/dotfiles/blob/master/playbooks/roles/common/tasks/main.yml
 #- name: Symlink my dotfiles
 #  file: src=~/.dotfiles/config/{{ item }}
@@ -38,6 +68,6 @@
 #    - .gitconfig
 #    - .pythonrc
 #    - .tmux.conf
-    
+
 #- name: Install/update VIM plugins
-#  command: vim +PluginInstall! +qall    
+#  command: vim +PluginInstall! +qall

@@ -12,3 +12,4 @@ bookstack_db_name: bookstackapp
 bookstack_db_user: bookstack
 bookstack_db_host: bookstack_db
 bookstack_root_password: "{{ mysql_root_password }}"
+bookstack_memory: 1g

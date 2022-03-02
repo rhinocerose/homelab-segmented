@@ -27,10 +27,10 @@
       PGID: "{{ user_gid | string }}"
     restart_policy: unless-stopped
     memory: "{{ sickchill_memory }}"
-    labels:
-      traefik.enable: "{{ sickchill_available_externally }}"
-      traefik.http.routers.sickchill.rule: "Host(`{{ sickchill_hostname }}.{{ external_domain }}`)"
-      traefik.http.routers.sickchill.tls.certresolver: "letsencrypt"
-      traefik.http.routers.sickchill.tls.domains[0].main: "{{ external_domain }}"
-      traefik.http.routers.sickchill.tls.domains[0].sans: "*.{{ external_domain }}"
-      traefik.http.services.sickchill.loadbalancer.server.port: "8081"
+    # labels:
+    #   traefik.enable: "{{ sickchill_available_externally }}"
+    #   traefik.http.routers.sickchill.rule: "Host(`{{ sickchill_hostname }}.{{ external_domain }}`)"
+    #   traefik.http.routers.sickchill.tls.certresolver: "letsencrypt"
+    #   traefik.http.routers.sickchill.tls.domains[0].main: "{{ external_domain }}"
+    #   traefik.http.routers.sickchill.tls.domains[0].sans: "*.{{ external_domain }}"
+    #   traefik.http.services.sickchill.loadbalancer.server.port: "8081"

@@ -1,0 +1,34 @@
+---
+- name: Create portainer directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0755
+  with_items:
+    - "{{ portainer_config_directory }}"
+
+- name: portainer Docker Container
+  docker_container:
+    name: "{{ portainer_container_name }}"
+    image: "{{ portainer_container_store }}/{{ portainer_container_name }}:{{ portainer_version }}"
+    pull: true
+    volumes:
+      - "{{ portainer_config_directory }}:/config"
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "{{ portainer_port }}:9000"
+    env:
+      TZ: "{{ system.timezone }}"
+      PUID: "{{ user_uid | string }}"
+      PGID: "{{ user_gid | string }}"
+    restart_policy: unless-stopped
+    memory: "{{ portainer_memory }}"
+    labels:
+      traefik.enable: "{{ portainer_available_externally }}"
+      traefik.http.routers.portainer.rule: "Host(`{{ portainer_hostname }}.{{ external_domain }}`)"
+      traefik.http.routers.portainer.tls.certresolver: "letsencrypt"
+      traefik.http.routers.portainer.tls.domains[0].main: "{{ external_domain }}"
+      traefik.http.routers.portainer.tls.domains[0].sans: "*.{{ external_domain }}"
+      traefik.http.services.portainer.loadbalancer.server.port: "9000"

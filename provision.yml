@@ -1,0 +1,9 @@
+---
+
+- hosts: vultr1
+  user: root
+  roles:
+    - role: userconfig
+    - role: dev-sec.ssh-hardening
+    - role: geerlingguy.ntp
+    - role: base-packages

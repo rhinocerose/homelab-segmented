@@ -1,0 +1,36 @@
+---
+
+- name: Create radarr directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0755
+  with_items:
+    - "{{ radarr_config_directory }}"
+
+- name: radarr Docker Container
+  docker_container:
+    name: "{{ radarr_container_name }}"
+    image: "{{ radarr_container_store }}/{{ radarr_container_name }}:{{ radarr_version }}"
+    pull: true
+    volumes:
+      - "{{ radarr_config_directory }}/config:/config:rw"
+      - "{{ media_downloads }}:/downloads:rw"
+      - "{{ media_movies }}:/movies:rw"
+    ports:
+      - "{{ radarr_port }}:7878"
+    env:
+      TZ: "{{ system.timezone }}"
+      PUID: "{{ user_uid | string }}"
+      PGID: "{{ user_gid | string }}"
+    restart_policy: unless-stopped
+    memory: "{{ radarr_memory }}"
+    labels:
+      traefik.enable: "{{ radarr_available_externally }}"
+      traefik.http.routers.radarr.rule: "Host(`{{ radarr_hostname }}.{{ external_domain }}`)"
+      traefik.http.routers.radarr.tls.certresolver: "letsencrypt"
+      traefik.http.routers.radarr.tls.domains[0].main: "{{ external_domain }}"
+      traefik.http.routers.radarr.tls.domains[0].sans: "*.{{ external_domain }}"
+      traefik.http.services.radarr.loadbalancer.server.port: "7878"

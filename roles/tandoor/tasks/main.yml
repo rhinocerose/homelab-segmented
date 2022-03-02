@@ -1,0 +1,79 @@
+---
+
+- name: Create tandoor group
+  group:
+    name: tandoor
+    gid: "{{ tandoor_gid }}"
+    state: present
+
+- name: Create tandoor user
+  user:
+    name: tandoor
+    uid: "{{ tandoor_uid }}"
+    state: present
+    system: yes
+    update_password: on_create
+    create_home: no
+    group: tandoor
+    
+- name: Create tandoor directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: tandoor
+    group: tandoor
+    mode: 0755
+  with_items:
+    - "{{ tandoor_config_directory }}"
+
+- name: Tandoor DB Docker Container
+  docker_container:
+    name: postgres
+    image: "postgres:{{ tandoor_db_container_version }}"
+    pull: true
+    volumes:
+      - "{{ tandoor_config_directory }}/postgresql:/var/lib/postgresql/data"
+    env:
+      TZ: "{{ system.timezone }}"
+      PUID: "{{ user_uid | string }}"
+      PGID: "{{ user_gid | string }}"
+    restart_policy: unless-stopped
+    
+- name: Install tandoor Docker Container
+  docker_container:
+    name: "{{ tandoor_container_name }}"
+    image: "{{ tandoor_container_store }}/{{ tandoor_container_name }}:{{ tandoor_version }}"
+    pull: true
+    volumes:
+      - "{{ tandoor_config_directory }}/staticfiles:/opt/recipes/staticfiles"
+      - "{{ tandoor_config_directory }}/nginx_config:/opt/recipes/nginx/conf.d"
+      - "{{ tandoor_config_directory }}/mediafiles:/opt/recipes/mediafiles"
+    ports:
+      - "{{ tandoor_port_http }}:80"
+      - "{{ tandoor_port_https }}:443"
+    env:
+      TZ: "{{ system.timezone }}"
+      PUID: "{{ tandoor_user_id | string }}"
+      PGID: "{{ tandoor_user_id | string }}"
+    restart_policy: unless-stopped
+    memory: "{{ tandoor_memory }}"
+    
+- name: Install tandoor NGINX Docker Container
+  docker_container:
+    name: nginx
+    image: "nginx:{{ tandoor_nginx_version }}"
+    pull: true
+    volumes:
+      - "{{ tandoor_config_directory }}/nginx_config:/etc/nginx/conf.d:ro"
+      - "{{ tandoor_config_directory }}/staticfiles:/static"
+      - "{{ tandoor_config_directory }}/mediafiles:/media"
+    env:
+      - ./.env
+    restart_policy: always
+    labels:
+      traefik.enable: "{{ tandoor_available_externally }}"
+      traefik.http.routers.tandoor.rule: "Host(`{{ tandoor_hostname }}.{{ external_domain }}`)"
+      traefik.http.routers.tandoor.tls.certresolver: "letsencrypt"
+      traefik.http.routers.tandoor.tls.domains[0].main: "{{ external_domain }}"
+      traefik.http.routers.tandoor.tls.domains[0].sans: "*.{{ external_domain }}"
+      traefik.http.services.tandoor.loadbalancer.server.port: "80"

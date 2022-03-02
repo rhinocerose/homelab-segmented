@@ -1,0 +1,36 @@
+---
+
+- name: Create jackett directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0755
+  with_items:
+    - "{{ jackett_config_directory }}"
+
+- name: jackett Docker Container
+  docker_container:
+    name: "{{ jackett_container_name }}"
+    image: "{{ jackett_container_store }}/{{ jackett_container_name }}:{{ jackett_version }}"
+    pull: true
+    volumes:
+      - "{{ jackett_config_directory }}:/config:rw"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "{{ media_downloads }}:/downloads"
+    ports:
+      - "{{ jackett_port }}:9117"
+    env:
+      TZ: "{{ system.timezone }}"
+      PUID: "{{ user_uid | string }}"
+      PGID: "{{ user_gid | string }}"
+    restart_policy: unless-stopped
+    memory: "{{ jackett_memory }}"
+    labels:
+      traefik.enable: "{{ jackett_available_externally }}"
+      traefik.http.routers.jackett.rule: "Host(`{{ jackett_hostname }}.{{ external_domain }}`)"
+      traefik.http.routers.jackett.tls.certresolver: "letsencrypt"
+      traefik.http.routers.jackett.tls.domains[0].main: "{{ external_domain }}"
+      traefik.http.routers.jackett.tls.domains[0].sans: "*.{{ external_domain }}"
+      traefik.http.services.jackett.loadbalancer.server.port: "9117"

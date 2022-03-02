@@ -1,0 +1,10 @@
+---
+radarr_enabled: false
+radarr_available_externally: false
+radarr_container_name: radarr
+radarr_container_store: linuxserver
+radarr_config_directory: "{{ docker_app_data }}/radarr"
+radarr_version: latest
+radarr_port: "7878"
+radarr_hostname: "radarr"
+radarr_memory: 1g

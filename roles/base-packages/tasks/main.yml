@@ -1,0 +1,43 @@
+---
+
+# - name: 'Update and upgrade apt packages'
+#   become: yes
+#   apt:
+#     upgrade: yes
+#     update_cache: yes
+#     cache_valid_time: 86400
+
+# - name: Update all packages to the latest version
+#   become: yes
+#   become_method: sudo
+#   apt:
+#     upgrade: dist
+
+- name: Install base packages
+  apt:
+    name: "{{ base.packages }}"
+    state: latest
+
+
+# Next two based on: https://github.com/palcu/dotfiles/blob/master/playbooks/roles/common/tasks/main.yml
+#- name: Symlink my dotfiles
+#  file: src=~/.dotfiles/config/{{ item }}
+#        dest=~/{{ item }}
+#        state=link
+#        force=yes
+#  with_items:
+#    - .vimrc
+#    - .zshrc
+#    - .zpreztorc
+#    - .zlogin
+#    - .zlogout
+#    - .zshenv
+#    - .inputrc
+#    - .gemrc
+#    - .gitignore
+#    - .gitconfig
+#    - .pythonrc
+#    - .tmux.conf
+    
+#- name: Install/update VIM plugins
+#  command: vim +PluginInstall! +qall    

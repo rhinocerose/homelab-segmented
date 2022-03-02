@@ -1,0 +1,21 @@
+################################################################
+### Packages
+################################################################
+base:
+  packages:
+#    - aria2
+#    - bash-completion
+    - coreutils
+    - curl
+    - git
+    - htop
+#    - unzip
+#    - zip
+    - vim
+#    - tree
+#    - tmux
+#    - man-db
+#    - neofetch
+    - python3
+    - python3-pip
+#    - xcape

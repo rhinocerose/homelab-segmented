@@ -1,0 +1,35 @@
+---
+
+- name: Create nzbget directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0755
+  with_items:
+    - "{{ nzbget_config_directory }}"
+
+- name: nzbget Docker Container
+  docker_container:
+    name: "{{ nzbget_container_name }}"
+    image: "{{ nzbget_container_store }}/{{ nzbget_container_name }}:{{ nzbget_version }}"
+    pull: true
+    volumes:
+      - "{{ nzbget_config_directory }}/config:/config:rw"
+      - "{{ media_downloads }}:/downloads:rw"
+    ports:
+      - "{{ nzbget_port }}:6789"
+    env:
+      TZ: "{{ system.timezone }}"
+      PUID: "{{ user_uid | string }}"
+      PGID: "{{ user_gid | string }}"
+    restart_policy: unless-stopped
+    memory: "{{ nzbget_memory }}"
+    labels:
+      traefik.enable: "{{ nzbget_available_externally }}"
+      traefik.http.routers.nzbget.rule: "Host(`{{ nzbget_hostname }}.{{ external_domain }}`)"
+      traefik.http.routers.nzbget.tls.certresolver: "letsencrypt"
+      traefik.http.routers.nzbget.tls.domains[0].main: "{{ external_domain }}"
+      traefik.http.routers.nzbget.tls.domains[0].sans: "*.{{ external_domain }}"
+      traefik.http.services.nzbget.loadbalancer.server.port: "6789"

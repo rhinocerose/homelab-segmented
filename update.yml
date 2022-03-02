@@ -1,0 +1,47 @@
+---
+
+- hosts: vultr1
+  user: arch
+  become: yes
+  roles:
+    - role: base-packages
+    
+    - role: geerlingguy.docker
+      tags: 
+        - docker
+        
+    - role: docker
+      tags: 
+        - docker
+        
+    - role: monitoring
+      tags:
+        - monitoring
+        
+    - role: media
+      tags: 
+        - media
+        
+    - role: git-hosting
+      tags:
+        - git-hosting
+        
+    - role: plex
+      tags:
+        - plex
+      when: (plex_enabled | default(False))
+
+    - role: radarr
+      tags:
+        - radarr
+      when: (radarr_enabled | default(False))
+
+    - role: sickchill
+      tags:
+        - sickchill
+      when: (sickchill_enabled | default(False))
+
+    - role: sonarr
+      tags:
+        - sonarr
+      when: (sonarr_enabled | default(False))

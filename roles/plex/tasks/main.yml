@@ -1,0 +1,45 @@
+---
+
+- name: Create plex directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0755
+  with_items:
+    - "{{ plex_config_directory }}"
+    - "{{ plex_logs }}"
+
+- name: Plex Docker Container
+  docker_container:
+    name: "{{ plex_container_name }}"
+    image: "{{ plex_container_store }}/{{ plex_container_name }}:{{ plex_version }}"
+    pull: true
+    volumes:
+      - "{{ plex_config_directory }}:/config:rw"
+      - "{{ plex_logs }}:/opt/plex/Library/Application Support/Plex Media Server/Logs:rw"
+      - "{{ plex_transcode_directory }}:/transcode:rw"
+      - "{{ plex_tv_directory }}:/data/tv:{{ plex_tv_permissions }}"
+      - "{{ plex_movies_directory }}:/data/movies:{{ plex_movies_permissions }}"
+    ports:
+      - "{{ plex_port }}:32400"
+      - "{{ plex_port }}:32400/udp"
+      - "32469:32469"
+      - "32469:32469/udp"
+      - "5353:5353/udp"
+      - "1900:1900/udp"
+    env:
+      TZ: "{{ system.timezone }}"
+      PUID: "{{ plex_uid | string }}"
+      PGID: "{{ plex_gid | string }}"
+    restart_policy: unless-stopped
+    restart_policy: unless-stopped
+    memory: "{{ plex_memory }}"
+    labels:
+      traefik.enable: "{{ plex_available_externally }}"
+      traefik.http.routers.plex.rule: "Host(`{{ plex_hostname }}.{{ external_domain }}`)"
+      traefik.http.routers.plex.tls.certresolver: "letsencrypt"
+      traefik.http.routers.plex.tls.domains[0].main: "{{ external_domain }}"
+      traefik.http.routers.plex.tls.domains[0].sans: "*.{{ external_domain }}"
+      traefik.http.services.plex.loadbalancer.server.port: "32400"

@@ -1,0 +1,10 @@
+---
+sonarr_enabled: false
+sonarr_available_externally: false
+sonarr_container_name: sonarr
+sonarr_container_store: linuxserver
+sonarr_config_directory: "{{ docker_app_data }}/sonarr"
+sonarr_version: latest
+sonarr_port: "8989"
+sonarr_hostname: "sonarr"
+sonarr_memory: 1g

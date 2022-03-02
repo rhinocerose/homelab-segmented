@@ -1,0 +1,10 @@
+---
+sickchill_enabled: false
+sickchill_available_externally: false
+sickchill_container_name: sickchill
+sickchill_container_store: linuxserver
+sickchill_config_directory: "{{ docker_app_data }}/sickchill"
+sickchill_version: latest
+sickchill_port: "8081"
+sickchill_hostname: "sickchill"
+sickchill_memory: 1g

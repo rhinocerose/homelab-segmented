@@ -1,0 +1,10 @@
+---
+nzbget_enabled: false
+nzbget_available_externally: false
+nzbget_container_name: nzbget
+nzbget_container_store: linuxserver
+nzbget_config_directory: "{{ docker_app_data }}/nzbget"
+nzbget_version: latest
+nzbget_port: "6789"
+nzbget_hostname: "nzbget"
+nzbget_memory: 1g

@@ -1,0 +1,28 @@
+---
+plex_enabled: false
+plex_available_externally: false
+
+# Docker Image
+plex_container_name: plex
+plex_container_store: linuxserver
+plex_version: latest
+
+# uid / gid
+plex_uid: "{{ user_uid }}"
+plex_gid: "{{ user_gid }}"
+
+# Directories
+plex_config_directory: "{{ docker_app_data }}/{{ plex_container_name }}/config"
+plex_transcode_directory: "{{ docker_app_data }}/{{ plex_container_name }}/transcode"
+plex_logs: "{{ docker_app_data }}/{{ plex_container_name }}/logs"
+plex_movies_directory: "{{ media_movies }}"
+plex_tv_directory: "{{ media_tv }}"
+
+# Permissions
+plex_movies_permissions: "rw"
+plex_tv_permissions: "rw"
+
+# Ports
+plex_port: "32400"
+plex_hostname: "plex"
+plex_memory: 2g

@@ -1,0 +1,51 @@
+---
+
+- name: Perform full patching
+  package:
+    name: '*'
+    state: latest
+
+- name: Add sudoers group
+  group:
+    name: "{{ user.name }}"
+    state: present
+
+- name: Add local user
+  user:
+    name: "{{ user.name }}"
+    group: "{{ user.name }}"
+    password: "{{ user.pass_hash }}"
+    shell: /bin/bash
+    home: "/home/{{ user.name }}"
+    create_home: yes
+    state: present
+
+- name: Add SSH public key for user
+  authorized_key:
+    user: "{{ user.name }}"
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    state: present
+
+- name: Add SSH public key for user
+  authorized_key:
+    user: "{{ user.name }}"
+    key: "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
+    state: present
+
+- name: Add sudoer rule for local user
+  template:
+    dest: "/etc/sudoers.d/{{ user.name }}"
+    src: "sudoers.j2"
+    owner: root
+    group: root
+    mode: 0440
+    validate: /usr/sbin/visudo -csf %s
+
+# - name: Add hardened SSH config
+#   template:
+#     src: "sshd_config.j2"
+#     dest: /etc/ssh/sshd_config
+#     owner: root
+#     group: root
+#     mode: 0600
+#   notify: Reload SSH

@@ -1,0 +1,198 @@
+---
+
+################################################################
+### User settings
+################################################################
+user_name: arch
+user_group: arch
+user_shell: /bin/bash
+user_uid: 1000
+user_gid: 1000
+user_pass_hash: '$6$vultr.arch$a41beHtZ6/9A0eHjfII3VyArafuiGSFxXYas.LOR6dehb44EW6V0d.HxwHB5oiMTwXj.I3oE3cB/D8F1QvZFt1'
+user_email: 'blah@blah.com'
+
+################################################################
+### System settings
+################################################################
+system:
+  timezone: America/Toronto
+  locale: en_US.UTF-8
+
+################################################################
+### Docker global settings
+################################################################
+docker_app_data: /docker
+docker_image_directory: "{{ docker_app_data }}/data"
+
+################################################################
+### SSH settings
+################################################################
+ssh_setting:
+  port: 22
+  password_authentication: "no"
+  root_login: "no"
+  challenge_response_authentication: "no"
+
+################################################################
+### Traefik
+################################################################
+traefik_container_name: traefik
+traefik_container_store: traefik
+traefik_version: "v2.4"
+traefik_docker_image: traefik:v2.4
+traefik_config_directory: "{{ docker_app_data }}/traefik"
+traefik_debug: "false"
+traefik_log_level: "INFO"
+# External Access
+# Traefik will allow access to certain applications externally. To enable this you'll either a domain name that points to your
+# home static IP address, the cloudflare with the cloudflare_ddns dynamic DNS container enabled, or use a dynamic DNS provider like no-ip.
+# You'll also need to map ports 80 and 443 from your router to your ansible-nas server, then enable the per-app "available_externally"
+# settings.
+traefik_enabled: false
+traefik_port_http: "80"
+traefik_port_https: "443"
+traefik_port_ui: "8083"
+
+
+# find the relevant name and environment variables for your DNS provider at https://go-acme.github.io/lego/dns/
+traefik_dns_provider: cloudflare
+traefik_environment_variables:
+  CF_DNS_API_TOKEN: "abcdabcd123412341234"
+
+# Ansible-NAS requests a wildcard certificate for your domain, so there should be no reason to have to use the staging
+# letsencrypt acme server. If you do want to flip between staging/production, you might need to stop Traefik and clear
+# the "{{ docker_home }}/traefik" after changing this setting.
+# traefik_acme_server: "https://acme-staging-v02.api.letsencrypt.org/directory" # staging
+traefik_acme_server: "https://acme-v02.api.letsencrypt.org/directory" # production
+
+# specs
+traefik_memory: 1g
+
+external_domain: "example.com"
+
+################################################################
+### MySQL/MariaDB settings
+################################################################
+mysql_root_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64373533373961643363653535316263396135356361386366326433656537663031316161323766
+          6461326364613138396633306662623439616434343261390a663664396166343233366364376531
+          34393333313332326331636430353839616130613931323962626464636434356462396338643765
+          3361663533646562610a383863666238643866633765353865343162666534626266626539326234
+          3161
+mysql_user: ${mysql_user}
+mysql_database: ${mysql_database}
+mysql_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64373533373961643363653535316263396135356361386366326433656537663031316161323766
+          6461326364613138396633306662623439616434343261390a663664396166343233366364376531
+          34393333313332326331636430353839616130613931323962626464636434356462396338643765
+          3361663533646562610a383863666238643866633765353865343162666534626266626539326234
+          3161
+
+
+################################################################
+### Share Folders
+################################################################
+samba_shares_root: /mnt/
+
+media_downloads: "{{ samba_shares_root }}/downloads"
+media_movies: "{{ samba_shares_root }}/movies"
+media_tv: "{{ samba_shares_root }}/tv/tv"
+media_torrents: "{{ samba_shares_root }}/torrents"
+
+
+################################################################
+### Gitlab
+################################################################
+gitlab_enabled: false
+gitlab_available_externally: false
+gitlab_container_name: gitlab-ce
+gitlab_container_store: gitlab
+gitlab_config_directory: "{{ docker_app_data }}/gitlab"
+gitlab_version: latest
+gitlab_port_http: 4080
+gitlab_port_https: 4043
+gitlab_port_ssh: 4022
+
+################################################################
+### Dillinger
+################################################################
+dillinger_enabled: false
+dillinger_available_externally: false
+dillinger_container_name: dillinger
+dillinger_container_store: linuxserver
+dillinger_version: latest
+dillinger_port: 9902
+
+################################################################
+### Nextcloud
+################################################################
+nextcloud_enabled: false
+nextcloud_available_externally: false
+nextcloud_container_name: nextcloud
+nextcloud_container_store: linuxserver
+nextcloud_version: latest
+nextcloud_port: 9983
+
+################################################################
+### Mariadb
+################################################################
+mariadb_container_name: mariadb
+mariadb_container_store: linuxserver
+mariadb_config_directory: "{{ docker_app_data }}/mariadb"
+mariadb_version: latest
+mariadb_port: 3306
+mariadb_root_password: "{{ mysql_root_password }}"
+
+################################################################
+### Bookstack
+################################################################
+bookstack_enabled: false
+bookstack_available_externally: false
+bookstack_container_name: bookstack
+bookstack_container_store: linuxserver
+bookstack_config_directory: "{{ docker_app_data }}/bookstack"
+bookstack_version: latest
+bookstack_port_http: 6875
+bookstack_db_container: bookstack_db
+bookstack_db_config_directory: "{{ docker_app_data }}/bookstack/mysql"
+bookstack_db_root_password: "{{ mysql_root_password }}"
+bookstack_db_name: bookstackapp
+bookstack_db_user: bookstack
+bookstack_db_host: bookstack_db
+bookstack_root_password: "{{ mysql_root_password }}"
+
+################################################################
+### Grafana
+################################################################
+grafana_enabled: false
+grafana_available_externally: false
+grafana_container_name: grafana
+grafana_container_store: grafana
+grafana_config_directory: "{{ docker_app_data }}/grafana"
+grafana_version: latest
+grafana_port: 3000
+
+################################################################
+### Wallabag
+################################################################
+wallabag_enabled: false
+wallabag_available_externally: false
+wallabag_container_name: wallabag
+wallabag_container_store: wallabag
+wallabag_config_directory: "{{ docker_app_data }}/wallabag"
+wallabag_version: latest
+wallabag_port_http: 7780
+
+################################################################
+### Couchpotato
+################################################################
+couchpotato_enabled: false
+couchpotato_available_externally: false
+couchpotato_container_name: couchpotato
+couchpotato_container_store: linuxserver
+couchpotato_config_directory: "{{ docker_app_data }}/couchpotato"
+couchpotato_version: latest
+couchpotato_port: "5050"
+

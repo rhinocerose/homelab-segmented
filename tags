@@ -7,4 +7,71 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/86bdb84c/
+Add SSH public key for user	roles/userconfig/tasks/main.yml	/^- name: Add SSH public key for user$/;"	p
+Add local user	roles/userconfig/tasks/main.yml	/^- name: Add local user$/;"	p
+Add sudoer rule for local user	roles/userconfig/tasks/main.yml	/^- name: Add sudoer rule for local user$/;"	p
+Add sudoers group	roles/userconfig/tasks/main.yml	/^- name: Add sudoers group$/;"	p
+Architecture	roles/userconfig/files/etc/pacman.conf	/^Architecture = auto$/;"	k	section:options
+CMS	documentation/segmentation.md	/^## CMS$/;"	s	chapter:Virtual Machines
+Create Gitea Directories	roles/gitea/tasks/main.yml	/^- name: Create Gitea Directories$/;"	p
+Create Gitea container	roles/gitea/tasks/main.yml	/^- name: Create Gitea container$/;"	p
+Create Gitea group account	roles/gitea/tasks/main.yml	/^- name: Create Gitea group account$/;"	p
+Create Gitea user account	roles/gitea/tasks/main.yml	/^- name: Create Gitea user account$/;"	p
+Create Heimdall group	roles/heimdall/tasks/main.yml	/^- name: Create Heimdall group$/;"	p
+Create Heimdall user	roles/heimdall/tasks/main.yml	/^- name: Create Heimdall user$/;"	p
+Create Jellyfin directories	roles/jellyfin/tasks/main.yml	/^- name: Create Jellyfin directories$/;"	p
+Create MySQL container for Gitea	roles/gitea/tasks/main.yml	/^- name: Create MySQL container for Gitea$/;"	p
+Create bookstack_directories	roles/bookstack/tasks/main.yml	/^- name: Create bookstack_directories$/;"	p
+Create heimdall directories	roles/heimdall/tasks/main.yml	/^- name: Create heimdall directories$/;"	p
+Create jackett directories	roles/jackett/tasks/main.yml	/^- name: Create jackett directories$/;"	p
+Create nzbget directories	roles/nzbget/tasks/main.yml	/^- name: Create nzbget directories$/;"	p
+Create plex directories	roles/plex/tasks/main.yml	/^- name: Create plex directories$/;"	p
+Create portainer directories	roles/portainer/tasks/main.yml	/^- name: Create portainer directories$/;"	p
+Create radarr directories	roles/radarr/tasks/main.yml	/^- name: Create radarr directories$/;"	p
+Create sickchill directories	roles/sickchill/tasks/main.yml	/^- name: Create sickchill directories$/;"	p
+Create sonarr directories	roles/sonarr/tasks/main.yml	/^- name: Create sonarr directories$/;"	p
+Create tandoor directories	roles/tandoor/tasks/main.yml	/^- name: Create tandoor directories$/;"	p
+Create tandoor group	roles/tandoor/tasks/main.yml	/^- name: Create tandoor group$/;"	p
+Create tandoor user	roles/tandoor/tasks/main.yml	/^- name: Create tandoor user$/;"	p
+Gitea	roles/gitea/README.md	/^# Gitea$/;"	c
+HoldPkg	roles/userconfig/files/etc/pacman.conf	/^HoldPkg     = pacman glibc$/;"	k	section:options
+Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:community
+Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:core
+Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:extra
+Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:multilib
+Install base packages	roles/base-packages/tasks/main.yml	/^- name: Install base packages$/;"	p
+Install heimdall Docker Container	roles/heimdall/tasks/main.yml	/^- name: Install heimdall Docker Container$/;"	p
+Install tandoor Docker Container	roles/tandoor/tasks/main.yml	/^- name: Install tandoor Docker Container$/;"	p
+Install tandoor NGINX Docker Container	roles/tandoor/tasks/main.yml	/^- name: Install tandoor NGINX Docker Container$/;"	p
+Jellyfin Docker Container	roles/jellyfin/tasks/main.yml	/^- name: Jellyfin Docker Container$/;"	p
+Media	documentation/segmentation.md	/^## Media$/;"	s	chapter:Virtual Machines
+Monitoring	documentation/segmentation.md	/^## Monitoring$/;"	s	chapter:Virtual Machines
+Network Routing	documentation/segmentation.md	/^## Network Routing$/;"	s	chapter:Virtual Machines
+Perform full patching	roles/userconfig/tasks/main.yml	/^- name: Perform full patching$/;"	p
+Plex Docker Container	roles/plex/tasks/main.yml	/^- name: Plex Docker Container$/;"	p
+SigLevel	roles/userconfig/files/etc/pacman.conf	/^SigLevel = PackageRequired$/;"	k	section:community
+SigLevel	roles/userconfig/files/etc/pacman.conf	/^SigLevel = PackageRequired$/;"	k	section:core
+SigLevel	roles/userconfig/files/etc/pacman.conf	/^SigLevel = PackageRequired$/;"	k	section:extra
+Tandoor DB Docker Container	roles/tandoor/tasks/main.yml	/^- name: Tandoor DB Docker Container$/;"	p
+Virtual Machines	documentation/segmentation.md	/^# Virtual Machines$/;"	c
+all	Makefile	/^all: update$/;"	t
+bertvv.samba	requirements.yml	/^- name: bertvv.samba$/;"	p
+bookstack_Docker Container	roles/bookstack/tasks/main.yml	/^- name: bookstack_Docker Container$/;"	p
+community	roles/userconfig/files/etc/pacman.conf	/^[community]$/;"	s
+core	roles/userconfig/files/etc/pacman.conf	/^[core]$/;"	s
+dev-sec.ssh-hardening	requirements.yml	/^- name: dev-sec.ssh-hardening$/;"	p
+extra	roles/userconfig/files/etc/pacman.conf	/^[extra]$/;"	s
+geerlingguy.docker	requirements.yml	/^- name: geerlingguy.docker$/;"	p
+geerlingguy.ntp	requirements.yml	/^- name: geerlingguy.ntp$/;"	p
 homelab-segmented	README.md	/^# homelab-segmented/;"	c
+jackett Docker Container	roles/jackett/tasks/main.yml	/^- name: jackett Docker Container$/;"	p
+mariadb Docker Container	roles/bookstack/tasks/main.yml	/^- name: mariadb Docker Container$/;"	p
+multilib	roles/userconfig/files/etc/pacman.conf	/^[multilib]$/;"	s
+nzbget Docker Container	roles/nzbget/tasks/main.yml	/^- name: nzbget Docker Container$/;"	p
+options	roles/userconfig/files/etc/pacman.conf	/^[options]$/;"	s
+portainer Docker Container	roles/portainer/tasks/main.yml	/^- name: portainer Docker Container$/;"	p
+provision	Makefile	/^provision:$/;"	t
+radarr Docker Container	roles/radarr/tasks/main.yml	/^- name: radarr Docker Container$/;"	p
+sickchill Docker Container	roles/sickchill/tasks/main.yml	/^- name: sickchill Docker Container$/;"	p
+sonarr Docker Container	roles/sonarr/tasks/main.yml	/^- name: sonarr Docker Container$/;"	p
+update	Makefile	/^update:$/;"	t

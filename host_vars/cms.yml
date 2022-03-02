@@ -1,0 +1,27 @@
+---
+
+user:
+  name: arch
+  group: arch
+  shell: /bin/bash
+  uid: 1001
+  gid: 1001
+  pass_hash: '$6$vultrdocker$oHGkUFY6JVskmD7EJXJELmvUqaS59W/pRhmllRlYSQCUH2VP80JcY.HNwJofKLxtSMEhxhiabR6Qyh7q4XZXM.'
+
+portainer_enabled: true
+heimdall_enabled: true
+grafana_enabled: true
+
+bookstack_enabled: false
+plex_enabled: false
+jellyfin_enabled: true
+sonarr_enabled: true
+radarr_enabled: true
+jackett_enabled: true
+sickchill_enabled: true
+nzbget_enabled: true
+couchpotato_enabled: true
+wallabag_enabled: false
+
+gitlab_enabled: false
+gitea_enabled: false

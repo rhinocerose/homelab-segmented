@@ -17,9 +17,10 @@
 - couchpotato
 
 ## CMS
-- tandoor
+- tandoor (mealie)
 - gitea
 - bitwarden (vaultwarden)
+- bookstack
 
 # Home Icons
 [Homer Icons](homer-icons-master.zip)

@@ -64,7 +64,7 @@ Author Information	galaxy_roles/geerlingguy.docker/README.md	/^## Author Informa
 Author Information	galaxy_roles/geerlingguy.ntp/README.md	/^## Author Information$/;"	s	chapter:Ansible Role: NTP
 BSD License	galaxy_roles/bertvv.samba/LICENSE.md	/^# BSD License$/;"	c
 Be explicit	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Be explicit$/;"	S	section:Contributor Guideline""Expectations
-CMS	documentation/segmentation.md	/^## CMS$/;"	s	chapter:Virtual Machines
+CMS	documentation/README.md	/^## CMS$/;"	s	chapter:Virtual Machines
 CVE-2017-7494	galaxy_roles/bertvv.samba/README.md	/^## CVE-2017-7494$/;"	s	chapter:Ansible role `bertvv.samba`
 Change log	galaxy_roles/bertvv.samba/CHANGELOG.md	/^# Change log$/;"	c
 Changed	galaxy_roles/bertvv.samba/CHANGELOG.md	/^## Changed$/;"	s	chapter:Change log
@@ -151,6 +151,7 @@ Example Playbook	galaxy_roles/bertvv.samba/README.md	/^## Example Playbook$/;"	s
 Example Playbook	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Example Playbook$/;"	s	chapter:ssh-hardening (Ansible Role)
 Example Playbook	galaxy_roles/geerlingguy.docker/README.md	/^## Example Playbook$/;"	s	chapter:Ansible Role: Docker
 Example Playbook	galaxy_roles/geerlingguy.ntp/README.md	/^## Example Playbook$/;"	s	chapter:Ansible Role: NTP
+Examples	documentation/README.md	/^# Examples$/;"	c
 Expectations	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^## Expectations$/;"	s	chapter:Contributor Guideline
 FAQ / Pitfalls	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## FAQ \/ Pitfalls$/;"	s	chapter:ssh-hardening (Ansible Role)
 Follow coding styles	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Follow coding styles$/;"	S	section:Contributor Guideline""Expectations
@@ -158,6 +159,7 @@ Generate ntp configuration file.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^-
 GitHub repositories	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### GitHub repositories$/;"	S	section:Contributor Guideline""Communication
 Gitea	roles/gitea/README.md	/^# Gitea$/;"	c
 HoldPkg	roles/userconfig/files/etc/pacman.conf	/^HoldPkg     = pacman glibc$/;"	k	section:options
+Home Icons	documentation/README.md	/^# Home Icons$/;"	c
 Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:community
 Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:core
 Include	roles/userconfig/files/etc/pacman.conf	/^Include = \/etc\/pacman.d\/mirrorlist$/;"	k	section:extra
@@ -185,9 +187,9 @@ License and Author	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## License and
 Loaded	README.md	/^## Loaded$/;"	s	chapter:homelab-segmented
 Local Testing	galaxy_roles/dev-sec.ssh-hardening/README.md	/^## Local Testing$/;"	s	chapter:ssh-hardening (Ansible Role)
 Make sure SELinux boolean settings are correct	galaxy_roles/bertvv.samba/tasks/main.yml	/^- name: Make sure SELinux boolean settings are correct$/;"	p
-Media	documentation/segmentation.md	/^## Media$/;"	s	chapter:Virtual Machines
-Monitoring	documentation/segmentation.md	/^## Monitoring$/;"	s	chapter:Virtual Machines
-Network Routing	documentation/segmentation.md	/^## Network Routing$/;"	s	chapter:Virtual Machines
+Media	documentation/README.md	/^## Media$/;"	s	chapter:Virtual Machines
+Monitoring	documentation/README.md	/^## Monitoring$/;"	s	chapter:Virtual Machines
+Network Routing	documentation/README.md	/^## Network Routing$/;"	s	chapter:Virtual Machines
 Perform full patching	roles/userconfig/tasks/main.yml	/^- name: Perform full patching$/;"	p
 Plex Docker Container	roles/plex/tasks/main.yml	/^- name: Plex Docker Container$/;"	p
 Populate service facts.	galaxy_roles/geerlingguy.ntp/tasks/main.yml	/^- name: Populate service facts.$/;"	p
@@ -225,7 +227,7 @@ Update and upgrade apt packages	roles/base-packages/tasks/main.yml	/^- name: 'Up
 Use Markdown	galaxy_roles/dev-sec.ssh-hardening/CONTRIBUTING.md	/^### Use Markdown$/;"	S	section:Contributor Guideline""Expectations
 Use with Ansible (and `docker` Python library)	galaxy_roles/geerlingguy.docker/README.md	/^## Use with Ansible (and `docker` Python library)$/;"	s	chapter:Ansible Role: Docker
 Verified	README.md	/^## Verified$/;"	s	chapter:homelab-segmented
-Virtual Machines	documentation/segmentation.md	/^# Virtual Machines$/;"	c
+Virtual Machines	documentation/README.md	/^# Virtual Machines$/;"	c
 [1.0.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.0.0) (2015-04-30)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.0.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.0.0) (2015-04-30)$/;"	s	chapter:Changelog
 [1.1.0](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.1.0) (2015-09-01)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.1.0](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.1.0) (2015-09-01)$/;"	s	chapter:Changelog
 [1.1](https://github.com/dev-sec/ansible-ssh-hardening/tree/1.1) (2015-09-01)	galaxy_roles/dev-sec.ssh-hardening/CHANGELOG.md	/^## [1.1](https:\/\/github.com\/dev-sec\/ansible-ssh-hardening\/tree\/1.1) (2015-09-01)$/;"	s	chapter:Changelog

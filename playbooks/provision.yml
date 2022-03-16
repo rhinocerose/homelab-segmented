@@ -6,4 +6,4 @@
     - role: userconfig
     - role: dev-sec.ssh-hardening
     - role: geerlingguy.ntp
-    - role: base-packages
+    # - role: base-packages

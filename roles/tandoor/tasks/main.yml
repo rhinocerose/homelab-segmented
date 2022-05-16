@@ -1,79 +1,126 @@
 ---
+- name: Create tandoor postgres user
+  community.general.postgresql_user:
+    login_host: "{{ tandoor_postgres_host }}"
+    login_password: "{{ postgres_password }}"
 
-- name: Create tandoor group
-  group:
     name: tandoor
-    gid: "{{ tandoor_gid }}"
     state: present
+    password: "{{ postgres_password }}"
 
-- name: Create tandoor user
-  user:
+- name: Create tandoor postgres database
+  community.general.postgresql_db:
+    login_host: "{{ tandoor_postgres_host }}"
+    login_password: "{{ postgres_password }}"
+
     name: tandoor
-    uid: "{{ tandoor_uid }}"
     state: present
-    system: yes
-    update_password: on_create
-    create_home: no
-    group: tandoor
-    
-- name: Create tandoor directories
-  file:
-    path: "{{ item }}"
-    state: directory
     owner: tandoor
-    group: tandoor
-    mode: 0755
-  with_items:
-    - "{{ tandoor_config_directory }}"
 
-- name: Tandoor DB Docker Container
-  docker_container:
-    name: postgres
-    image: "postgres:{{ tandoor_db_container_version }}"
-    pull: true
-    volumes:
-      - "{{ tandoor_config_directory }}/postgresql:/var/lib/postgresql/data"
+- name: Create tandoor network
+  community.docker.docker_network:
+    name: tandoor
+    state: present
+
+- name: Create tandoor static volume
+  community.docker.docker_volume:
+    name: tandoor-static
+    state: present
+
+- name: Create tandoor-media volume
+  community.docker.docker_volume:
+    name: tandoor-media
+    state: present
+
+- name: Create tandoor directory
+  become: true
+  file:
+    path: "{{ tandoor_config_directory }}"
+    state: directory
+    owner: root
+    group: root
+
+- name: Create tandoor nginx config
+  become: true
+  copy:
+    dest: /etc/tandoor/Recipes.nginx.conf
+    # Based on the default Recipes.conf file, required because of the changed container name
+    content: |
+      server {
+        listen 80;
+        server_name localhost;
+        client_max_body_size 128M;
+        # serve media files
+        location /media/ {
+          alias /media/;
+        }
+        # pass requests for dynamic content to gunicorn
+        location / {
+          proxy_set_header Host $http_host;
+          proxy_pass http://tandoor:{{ tandoor_port_http }};
+        }
+      }
+- name: Create tandoor backend container
+  community.docker.docker_container:
+    name: tandoor
+    image: "{{ tandoor_container_store }}/{{ tandoor_container_store }}:{{ tandoor_version }}"
+    state: started
+    container_default_behavior: compatibility
+    comparisons:
+      "*": strict
     env:
-      TZ: "{{ system.timezone }}"
-      PUID: "{{ user_uid | string }}"
-      PGID: "{{ user_gid | string }}"
+      SECRET_KEY: "{{ tandoor_secret_key }}"
+      ALLOWED_HOSTS: "*"
+
+      DB_ENGINE: "{{ tandoor_postgres_db_engine }}"
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: tandoor
+      POSTGRES_PASSWORD: "{{ postgres_password }}"
+      POSTGRES_DB: tandoor
+
+      FRACTION_PREF_DEFAULT: "1"
+      COMMENT_PREF_DEFAULT: "0"
+    network_mode: tandoor
+    networks:
+    - name: tandoor
+    - name: postgres
+    purge_networks: yes
+    mounts:
+    - source: tandoor-static
+      target: "{{tandoor_config_directory}}/staticfiles"
+    - source: tandoor-media
+      target: "{{tandoor_config_directory}}/mediafiles"
     restart_policy: unless-stopped
-    
-- name: Install tandoor Docker Container
-  docker_container:
-    name: "{{ tandoor_container_name }}"
-    image: "{{ tandoor_container_store }}/{{ tandoor_container_name }}:{{ tandoor_version }}"
-    pull: true
-    volumes:
-      - "{{ tandoor_config_directory }}/staticfiles:/opt/recipes/staticfiles"
-      - "{{ tandoor_config_directory }}/nginx_config:/opt/recipes/nginx/conf.d"
-      - "{{ tandoor_config_directory }}/mediafiles:/opt/recipes/mediafiles"
-    ports:
-      - "{{ tandoor_port_http }}:80"
-      - "{{ tandoor_port_https }}:443"
-    env:
-      TZ: "{{ system.timezone }}"
-      PUID: "{{ tandoor_user_id | string }}"
-      PGID: "{{ tandoor_user_id | string }}"
+
+# TODO can we serve directly from traefik instead?
+- name: Create tandoor frontend container
+  community.docker.docker_container:
+    name: tandoor-frontend
+    image: nginx
+    state: started
+    container_default_behavior: compatibility
+    comparisons:
+      "*": strict
+      labels: allow_more_present
+    mounts:
+    - source: tandoor-static
+      target: /static
+    - source: tandoor-media
+      target: /media
+    - source: /etc/tandoor/Recipes.nginx.conf
+      target: /etc/nginx/conf.d/Recipes.conf
+      type: bind
+      read_only: true
+    # labels:
+    #   traefik.enable: "true"
+    #   traefik.http.routers.recipes.entrypoints: websecure
+    #   traefik.http.routers.recipes.rule: Host(`recipes.rogryza.me`)
+    #   traefik.http.routers.recipes.tls: "true"
+    #   traefik.http.routers.recipes.tls.certresolver: lets-encrypt
+    network_mode: web
+    networks:
+    - name: web
+    - name: tandoor
+    purge_networks: yes
     restart_policy: unless-stopped
-    memory: "{{ tandoor_memory }}"
-    
-- name: Install tandoor NGINX Docker Container
-  docker_container:
-    name: nginx
-    image: "nginx:{{ tandoor_nginx_version }}"
-    pull: true
-    volumes:
-      - "{{ tandoor_config_directory }}/nginx_config:/etc/nginx/conf.d:ro"
-      - "{{ tandoor_config_directory }}/staticfiles:/static"
-      - "{{ tandoor_config_directory }}/mediafiles:/media"
-    env:
-      - ./.env
-    restart_policy: always
-    labels:
-      traefik.enable: "{{ tandoor_available_externally }}"
-      traefik.http.routers.tandoor.rule: "Host(`{{ tandoor_hostname }}.{{ external_domain }}`)"
-      traefik.http.routers.tandoor.tls.certresolver: "letsencrypt"
-      traefik.http.routers.tandoor.tls.domains[0].main: "{{ external_domain }}"
-      traefik.http.routers.tandoor.tls.domains[0].sans: "*.{{ external_domain }}"
-      traefik.http.services.tandoor.loadbalancer.server.port: "80"

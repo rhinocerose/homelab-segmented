@@ -1,17 +1,31 @@
 ---
 tandoor_enabled: false
 tandoor_available_externally: false
-tandoor_container_name: tandoor
+tandoor_container_name: recipes
 tandoor_container_store: vabene1111
 tandoor_config_directory: "{{ docker_app_data }}/tandoor"
 tandoor_version: 1.0.4.1
 tandoor_port_http: 8111
 tandoor_port_https: 8112
 tandoor_hostname: tandoor
-tandoor_uid: "1310"
-tandoor_gid: "1310"
+tandoor_uid: "1335"
+tandoor_gid: "1335"
 tandoor_memory: 1g
 
 
 tandoor_db_container_version: 11-alpine
 tandoor_nginx_version: mainline-alpine
+
+tandoor_debug: "0"
+tandoor_secret_key: "qCa0uht0MYXRaut+bJokq8r21sRLbR3XYhJnCei48fltPeRvpe"
+tandoor_postgres_db_engine: django.db.backends.postgresql
+tandoor_postgres_host: "db_recipes"
+tandoor_postgres_port: "5432"
+tandoor_postgres_user: "djangouser"
+tandoor_postgres_db: "djangodb"
+tandoor_postgres_password: "blahblah"
+tandoor_allow_fractions: "0"
+tandoor_allow_comments: "0"
+tandoor_shopping_refresh_interval: "5"
+tandoor_gunicorn: "0"
+tandoor_reverse_proxy: "0"

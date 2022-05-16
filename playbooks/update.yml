@@ -1,11 +1,11 @@
 ---
 
-- hosts: vultr1
+- hosts: rpi
   user: arch
   become: yes
   roles:
 
-    - role: base-packages
+    # - role: base-packages
 
     # - role: geerlingguy.docker
     #   tags:
@@ -50,4 +50,14 @@
       tags:
         - bookstack
       when: (bookstack_enabled | default(False))
+
+    - role: tandoor
+      tags:
+        - tandoor
+      when: (tandoor_enabled | default(False))
+
+    - role: mealie
+      tags:
+        - mealie
+      when: (mealie_enabled | default(False))
 

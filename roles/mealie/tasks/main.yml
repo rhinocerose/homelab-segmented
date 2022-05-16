@@ -1,0 +1,57 @@
+---
+
+- name: Create mealie group
+  group:
+    name: mealie
+    gid: "{{ mealie_gid }}"
+    state: present
+
+- name: Create mealie user
+  user:
+    name: mealie
+    uid: "{{ mealie_uid }}"
+    state: present
+    system: yes
+    update_password: on_create
+    create_home: no
+    group: mealie
+
+- name: Create mealie directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: mealie
+    group: mealie
+    mode: 0755
+  with_items:
+    - "{{ mealie_config_directory }}"
+
+- name: Install mealie Docker Container
+  docker_container:
+    name: "{{ mealie_container_name }}"
+    image: "{{ mealie_container_store }}/{{ mealie_container_name }}:{{ mealie_version }}"
+    pull: true
+    volumes:
+      - "{{ mealie_config_directory }}/data/:/app/data"
+    ports:
+      - "{{ mealie_port_http }}:80"
+    env:
+      TZ: "{{ system.timezone }}"
+      PUID: "{{ mealie_uid | string }}"
+      PGID: "{{ mealie_gid | string }}"
+
+      RECIPE_PUBLIC: "true"
+      RECIPE_SHOW_NUTRITION: 'true'
+      RECIPE_SHOW_ASSETS: 'true'
+      RECIPE_LANDSCAPE_VIEW: 'true'
+      RECIPE_DISABLE_COMMENTS: 'false'
+      RECIPE_DISABLE_AMOUNT: 'false'
+    restart_policy: unless-stopped
+    memory: "{{ mealie_memory }}"
+    # labels:
+    #   traefik.enable: "{{ mealie_available_externally }}"
+    #   traefik.http.routers.mealie.rule: "Host(`{{ mealie_hostname }}.{{ external_domain }}`)"
+    #   traefik.http.routers.mealie.tls.certresolver: "letsencrypt"
+    #   traefik.http.routers.mealie.tls.domains[0].main: "{{ external_domain }}"
+    #   traefik.http.routers.mealie.tls.domains[0].sans: "*.{{ external_domain }}"
+    #   traefik.http.services.mealie.loadbalancer.server.port: "80"

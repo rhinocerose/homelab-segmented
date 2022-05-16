@@ -4,8 +4,8 @@ all:
   children:
     servers:
       hosts:
-        vultr1:
-          ansible_host: 45.32.174.98
+        rpi:
+          ansible_host: 192.168.1.134
         # media:
         #   ansible_host: 192.168.20.10
     # workstations:

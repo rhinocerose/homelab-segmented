@@ -1,0 +1,12 @@
+---
+mealie_enabled: false
+mealie_available_externally: false
+mealie_container_name: "mealie"
+mealie_container_store: "hkotel"
+mealie_config_directory: "{{ docker_app_data }}/mealie"
+mealie_version: latest
+mealie_port_http: "9925"
+mealie_hostname: "mealie"
+mealie_uid: "1343"
+mealie_gid: "1343"
+mealie_memory: 1g
